@@ -1,0 +1,83 @@
+body {
+  padding: 50px;
+  font-size:14px;
+ font-family: Century Gothic;
+}
+
+a {
+  color: #00B7FF;
+}
+
+canvas {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.navbar {
+  background-color: rgb(244, 244, 244);
+  background: rgb(244, 244, 244);
+  margin: 0px;
+  width: 100%;
+  border-bottom-style: solid;
+  height: 10%;
+}
+
+.btn {
+font-family:Century Gothic;
+ background-color:  rgb(161, 116, 252); /* Blue background */
+ border: none; /* Remove borders */
+ color: white; /* White text */
+ padding: 12px 16px; /* Some padding */
+ font-size: 11px; /* Set a font size */
+ margin-left:2%;
+ cursor: pointer; /* Mouse pointer on hover */
+  font-weight:500 !important;
+  font-size:11px;
+}
+
+.btn:hover {
+  background-color: #5758A2;
+  color:#fff !important;
+  font-weight:600;
+
+    -webkit-transition: border-radius 2s;
+
+}
+
+
+
+.btn:hover:focus:active {
+
+  background-color: #5758A2;
+  color:#fff !important;
+  font-weight:600;
+
+    -webkit-transition: padding 2s;
+}
+
+.font-h3{
+color:rgb(90, 81, 81)!important;
+font-size:17px !Important;
+font-weight:600;
+width:70%;
+height:11%;
+margin-left:5%;
+}
+
+.font-net{
+ font-family: Century Gothic;
+color:  rgb(78, 79, 79);
+margin-left:14% !important;
+}
+
+.col-md-3-panels{
+padding-bottom: 33% !important;
+}
+
+.margin-canvas{
+margin-top:10% !important;
+}
+
+
+.background-tooltip + .tooltip > .tooltip-inner {font-family: Century Gothic; background-color:rgb(211, 211, 211, 0.9);padding:20px 20px 20px 20px;}
