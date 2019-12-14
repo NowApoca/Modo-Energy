@@ -16,7 +16,7 @@
     "express": "~4.0.0",
     "jbox": "^1.0.6",
     "momentjs": "^2.0.0",
-    "morgan": "~1.0.0",
+    "morgan": "~1.9.1",
     "pg": "^7.14.0",
     "static-favicon": "~1.0.0"
   }
