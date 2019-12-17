@@ -1,11 +1,13 @@
 const Client = require('pg').Client
+const constants = require("./constants")
+// Configuration of the external data base.
 
 const client = new Client({
-  user: 'modolabs',
-  password: 'm0d0LaBs!0121',
-  host: 'modo.cconwsi52yhe.eu-west-2.rds.amazonaws.com',
-  database: 'modo',
-  port: 5432,
+  user: constants.dbUser,
+  password: constants.dbPassword,
+  host: constants.dbHost,
+  database: constants.dbName,
+  port: constants.dbPort,
 })
 
 client.connect()
@@ -33,7 +35,7 @@ async function getLastFreq(){
   for(const row of query.rows){
     if(!obj[row.ts.getTime()]){
       obj[row.ts.getTime()] = {
-        val: row.sf
+        Frequency: row.sf
       };
     }
   }
@@ -120,7 +122,9 @@ async function getLastRollingSystem(){
   const query = await client.query('SELECT * FROM bmrs.get_rolling_system_demand()')
   const obj = {}
   for(const row of query.rows){
-    obj[row.ts.getTime()] = row.sum;
+    obj[row.ts.getTime()] = {
+      RollingSystem: row.sum,
+    }
   }
   return {dataQuery: "lastRollingSystem", result: objToArray(obj)};
 }
@@ -135,15 +139,6 @@ async function getLastSystemPrices(){
     };
   }
   return {dataQuery: "lastSystemPrices", result: objToArray(obj)};
-}
-
-function handleError(func){
-    try{
-        const result = func();
-        return result
-    }catch(e){
-        return {err: true, msg: e}
-    }
 }
 
 function objToArray(obj){
